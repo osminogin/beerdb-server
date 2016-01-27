@@ -1,0 +1,5 @@
+{
+	"ImportPath": "github.com/osminogin/beerdb-server",
+	"GoVersion": "go1.5",
+	"Deps": []
+}
