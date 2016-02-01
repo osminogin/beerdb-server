@@ -4,6 +4,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+
 	"github.com/osminogin/beerdb-server/Godeps/_workspace/src/github.com/russross/blackfriday"
 )
 

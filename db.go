@@ -1,11 +1,12 @@
 package main
 
 import (
-	"os"
 	"fmt"
+	"os"
 	"regexp"
-	"github.com/osminogin/beerdb-server/Godeps/_workspace/src/github.com/jinzhu/gorm"
+
 	_ "github.com/osminogin/beerdb-server/Godeps/_workspace/src/github.com/go-sql-driver/mysql"
+	"github.com/osminogin/beerdb-server/Godeps/_workspace/src/github.com/jinzhu/gorm"
 )
 
 var (

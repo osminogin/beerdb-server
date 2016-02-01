@@ -1,9 +1,9 @@
 package main
 
 import (
-	"os"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/osminogin/beerdb-server/Godeps/_workspace/src/github.com/gorilla/mux"
 )
