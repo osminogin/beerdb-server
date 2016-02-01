@@ -27,6 +27,15 @@
 			"ImportPath": "github.com/lib/pq/hstore",
 			"Comment": "go1.0-cutoff-74-g8ad2b29",
 			"Rev": "8ad2b298cadd691a77015666a5372eae5dbfac8f"
+		},
+		{
+			"ImportPath": "github.com/russross/blackfriday",
+			"Comment": "v1.4-19-gc8875c0",
+			"Rev": "c8875c0ed47e07b063c3628e2e4d4c9826721795"
+		},
+		{
+			"ImportPath": "github.com/shurcooL/sanitized_anchor_name",
+			"Rev": "10ef21a441db47d8b13ebcc5fd2310f636973c77"
 		}
 	]
 }

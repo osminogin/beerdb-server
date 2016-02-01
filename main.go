@@ -15,12 +15,13 @@ func init() {
 		log.Fatalf("DB error: %v", err)
 		os.Exit(1)
 	}
+	// TODO: Defer database connection close
 }
 
 func main() {
 	port := os.Getenv("PORT")
 	r := mux.NewRouter()
-	r.HandleFunc("/", HomeHandler).Methods("GET")
+	r.HandleFunc("/", ReadmeHandler).Methods("GET")
 
 	api := r.PathPrefix("/api/v1").Subrouter()
 	api.Handle("/beer", GetBeerList(&db))
