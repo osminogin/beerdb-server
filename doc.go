@@ -1,6 +1,7 @@
 package main
 
 import (
+	"text/template"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -13,6 +14,7 @@ func ReadmeHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	unsafe := blackfriday.MarkdownCommon(input)
-	w.Write(unsafe)
+	output := blackfriday.MarkdownCommon(input)
+	t, _ := template.ParseFiles("templates/base.html")
+	t.Execute(w, output)
 }
