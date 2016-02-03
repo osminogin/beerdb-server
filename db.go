@@ -13,6 +13,7 @@ var (
 	db gorm.DB
 )
 
+// InitDB initialize and check connection to database.
 func InitDB() error {
 	databaseUrl := os.Getenv("CLEARDB_DATABASE_URL")
 	re, _ := regexp.Compile("([^:]+)://([^:]+):([^@]+)@([^/]+)/([^?]+)")

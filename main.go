@@ -8,21 +8,18 @@ import (
 	"github.com/osminogin/beerdb-server/Godeps/_workspace/src/github.com/gorilla/mux"
 )
 
-func init() {
+func main() {
 	// Database initialization
 	err := InitDB()
 	if err != nil {
 		log.Fatalf("DB error: %v", err)
 		os.Exit(1)
 	}
-	// TODO: Defer database connection close
-}
+	defer db.DB().Close()
 
-func main() {
-	port := os.Getenv("PORT")
+	// HTTP routes
 	r := mux.NewRouter()
 	r.HandleFunc("/", ReadmeHandler).Methods("GET")
-
 	api := r.PathPrefix("/api/v1").Subrouter()
 	api.Handle("/beer", GetBeerList(&db))
 	api.Handle("/beer/{key}", GetBeerByKey(&db))
@@ -30,8 +27,10 @@ func main() {
 	api.Handle("/brand/{key}", GetBrandByKey(&db))
 	api.Handle("/brewery", GetBreweryList(&db))
 	api.Handle("/brewery/{key}", GetBreweryKey(&db))
-
 	http.Handle("/", r)
+
+	// Start server
+	port := os.Getenv("PORT")
 	log.Printf("Starting beerdb-server on :%s", port)
 	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
