@@ -2,6 +2,10 @@
 
 ...
 
+## Author
+
+Vladimir Osintsev <osintsev@gmail.com>
+
 ## License
 
 AGPLv3 or later
