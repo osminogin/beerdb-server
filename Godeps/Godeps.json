@@ -30,8 +30,8 @@
 		},
 		{
 			"ImportPath": "github.com/russross/blackfriday",
-			"Comment": "v1.4-19-gc8875c0",
-			"Rev": "c8875c0ed47e07b063c3628e2e4d4c9826721795"
+			"Comment": "v1.4-23-gb43df97",
+			"Rev": "b43df972fb5fdf3af8d2e90f38a69d374fe26dd0"
 		},
 		{
 			"ImportPath": "github.com/shurcooL/sanitized_anchor_name",
