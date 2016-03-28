@@ -29,7 +29,8 @@ var (
 	db gorm.DB
 )
 
-// InitDB initialize and check connection to database.
+// InitDB construct dbSource from environment and initialize
+// connection to database with check.
 func InitDB() error {
 	databaseUrl := os.Getenv("CLEARDB_DATABASE_URL")
 	re, _ := regexp.Compile("([^:]+)://([^:]+):([^@]+)@([^/]+)/([^?]+)")
@@ -44,6 +45,7 @@ func InitDB() error {
 		match[5],
 	)
 
+	// Open connection to database
 	db, _ = gorm.Open(dbDriver, dbSource)
 
 	// Check database connection
