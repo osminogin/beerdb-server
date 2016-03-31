@@ -1,0 +1,3 @@
+[submodule "contrib/schema.sql"]
+	path = contrib/schema.sql
+	url = https://github.com/openbeer/schema.sql
